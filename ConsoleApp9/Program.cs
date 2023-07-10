@@ -8,21 +8,21 @@ namespace ConsoleApp9
     {
         static void Main(string[] args)
         {
+            const string ExitInMenu = "Exit";
+            const string SumInMenu = "Sum";
+
             List<int> numbers = new List<int>();
 
             string userInput;
             bool isProgramWork = true;
             int userInputNumber;
-
-            const string exitInMenu = "Exit";
-            const string sumInMenu = "Sum";
-
+                        
             while (isProgramWork)
             {
                 Console.Clear();
                 Console.WriteLine("ВВедите числа для сложения");
-                Console.WriteLine($"Для сложения всех чисел введите - {sumInMenu}");
-                Console.WriteLine($"Для выхода нажмите - {exitInMenu}");
+                Console.WriteLine($"Для сложения всех чисел введите - {SumInMenu}");
+                Console.WriteLine($"Для выхода нажмите - {ExitInMenu}");
 
                 userInput = Console.ReadLine();
   
@@ -34,20 +34,19 @@ namespace ConsoleApp9
                 {
                     switch (userInput)
                     {
-                        case sumInMenu:
-                            AddingNumbers(ref numbers);
+                        case SumInMenu:
+                            AddNumbers(numbers);
                             break;
 
-                        case exitInMenu:
+                        case ExitInMenu:
                             isProgramWork = false;
                             break;
                     }
                 }
             }
-
         }
 
-        static void AddingNumbers(ref List<int> numbers)
+        static void AddNumbers(List<int> numbers)
         {
             int numbersSum = 0;
 
@@ -58,7 +57,6 @@ namespace ConsoleApp9
 
             Console.WriteLine("Сумма всех чисел = " + numbersSum);
             Console.WriteLine("Для продолжения нажмите любую клавишу");
-            numbers.Clear();
             Console.ReadKey();
         }  
     }
