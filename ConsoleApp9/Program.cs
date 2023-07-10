@@ -35,7 +35,7 @@ namespace ConsoleApp9
                     switch (userInput)
                     {
                         case SumInMenu:
-                            AddNumbers(numbers);
+                            ToSumNumbers(numbers);
                             break;
 
                         case ExitInMenu:
@@ -46,7 +46,7 @@ namespace ConsoleApp9
             }
         }
 
-        static void AddNumbers(List<int> numbers)
+        static void ToSumNumbers(List<int> numbers)
         {
             int numbersSum = 0;
 
